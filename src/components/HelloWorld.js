@@ -8,3 +8,11 @@ export default function HolaMundo() {
     </div>
   )
 }
+
+export function GoodBye() {
+  return (
+    <div>
+      <p>Bye Bye</p>
+    </div>
+  )
+}
