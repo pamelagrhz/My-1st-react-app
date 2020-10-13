@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Greet(prop) {
   const { user, saludo } = prop;
-  const { name, lastName, age } = user;
+  const { name = "Usuario", lastName, age } = user;
   console.log(prop);
 
   return (
