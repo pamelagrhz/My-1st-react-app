@@ -11,8 +11,9 @@ function App() {
     lastName: "Ruíz",
     age: "23"
   }
-  const saludo = (name) => {
-    alert("Hola " + name)
+  const saludo = (name, age) => {
+    //alert("Hola " + name + " tiene " + age + " años.");
+    alert(`Hola ${name} tiene ${age} años.`)
   }
   return (
     <div className="App">

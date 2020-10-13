@@ -8,7 +8,7 @@ export default function Greet(prop) {
   return (
     <div >
       <h2 >Hola {name} {lastName}, Edad: {age}</h2>
-      <button onClick={() => saludo(name)}>Saludar</button>
+      <button onClick={() => saludo(name, age)}>Saludar</button>
     </div>
 
 
