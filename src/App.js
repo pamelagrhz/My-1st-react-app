@@ -11,13 +11,16 @@ function App() {
     lastName: "Ruíz",
     age: "23"
   }
+  const saludo = (name) => {
+    alert("Hola " + name)
+  }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <HelloWorld />
         <GoodBye />
-        <Greet user={userInfo} />
+        <Greet user={userInfo} saludo={saludo} />
       </header>
     </div>
   );
