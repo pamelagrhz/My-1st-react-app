@@ -5,7 +5,9 @@ import HelloWorld, { GoodBye } from "./components/HelloWorld.js";
 import Greet from "./components/Greet";
 import { Button } from 'react-bootstrap';
 import { ReactComponent as IconName } from "./assets/svg/react.svg"
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Contacto from "./pages/Contacto";
+import QuienSoy from "./pages/QuienSoy";
 
 function App() {
   //Estados
@@ -43,6 +45,24 @@ function App() {
       <h3>El coche está: {state ? "Encendido" : "Apagado"}</h3>
       <h3>{count} Clicks</h3>
       <Button variant="info" size="lg" block onClick={encenderApagar}>Encender/Apagar</Button>
+      <Router>
+        <div>
+          <Link to="/contacto">
+            <Button>Contacto</Button>
+          </Link>
+          <Link to="/quien-soy">
+            <Button>Quien soy</Button>
+          </Link>
+        </div>
+        <Switch>
+          <Route path="/contacto">
+            <Contacto />
+          </Route>
+          <Route path="/quien-soy">
+            <QuienSoy />
+          </Route>
+        </Switch>
+      </Router>
       <IconName />
     </div>
   );
