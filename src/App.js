@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HelloWorld, { GoodBye } from "./components/HelloWorld.js";
@@ -8,6 +8,8 @@ import { ReactComponent as IconName } from "./assets/svg/react.svg"
 
 
 function App() {
+  //Estados
+  const [state, setState] = useState(false);
   const userInfo = {
     name: "Pamela",
     lastName: "Ruíz",
@@ -16,6 +18,11 @@ function App() {
   const saludo = (name, age) => {
     //alert("Hola " + name + " tiene " + age + " años.");
     alert(`Hola ${name} tiene ${age} años.`)
+  }
+  const encenderApagar = () => {
+    //setState(true); //Solo enciende
+    // setState(!state); //Manda lo contrario
+    setState(prevValue => !prevValue); //si el componente state no tuviera acceso 
   }
   return (
     <div className="App">
@@ -26,10 +33,13 @@ function App() {
         <Greet user={userInfo} saludo={saludo} />
       </header>
       <h1>React Bootstrap</h1>
-      <Button variant="info" size="lg" block>Algo</Button>
+      <h3>El coche está: {state ? "Encendido" : "Apagado"}</h3>
+      <Button variant="info" size="lg" block onClick={encenderApagar}>Encender/Apagar</Button>
       <IconName />
     </div>
   );
 }
 
 export default App;
+
+
