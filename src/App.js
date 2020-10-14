@@ -4,6 +4,7 @@ import './App.css';
 import HelloWorld, { GoodBye } from "./components/HelloWorld.js";
 import Greet from "./components/Greet";
 import { Button } from 'react-bootstrap';
+import { ReactComponent as IconName } from "./assets/svg/react.svg"
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       </header>
       <h1>React Bootstrap</h1>
       <Button variant="info" size="lg" block>Algo</Button>
+      <IconName />
     </div>
   );
 }
